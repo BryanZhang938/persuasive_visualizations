@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Bryan Zhang</strong> — <em>brzhang@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Substantiated civilian complaints against NYPD officers have significantly increased from 2000 to 2020.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="forprop.png" style = "width: 100%;" alt="Bar chart showing the number of substantiated NYPD complaints per year from 1990 to 2020. The chart highlights a sharp increase in complaints after the year 2000, peaking in 2015 with 812 findings. A vertical dashed line marks the year 2000, and the bar for 2015 is labeled as the peak." />
+          <figcaption>Substantiated NYPD complaints by year (1990–2020). The number of complaints with substantiated findings has increased significantly since 2000, peaking in 2015 with 812 cases. This trend suggests increased security or improved reporting mechanisms over time.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li><strong>Usage of a Color Gradient</strong>
+            <br>
+            Score: +1
+            <br>
+            The light-to-dark gradient from earlier to later years reinforces the idea that the number of complaints have gradually risen over time. Visually, it forces the reader to look at the graph from left to right to notice the gradual increase. Doing this does not represent the data either. Other color palettes could make it harder to follow visually.
+          </li>
+          <li><strong>Y-Axis Starting at 0</strong>
+            <br>
+            Score: +2
+            <br>
+            Starting the y-axis at 0 ensures that that the visual proportions matches the actual values. This choice avoids any visual exaggeration of differences and maintains accuracy within the data.
+          </li>
+          <li><strong>Highlighting the Year 2000</strong>
+            <br>
+            Score: +1.5
+            <br>
+            This emphasizes the boundary of where the main narrative is centered at, where substantiated complains spiked after 2000. This is overall separated from the rest of the data and reinforces the title without adding an unnecessary detail. An alternative is to shade the year to mark the boundary, but the dashed line is more simple and effective.
+          </li>
+          <li><strong>Annotating the Peak</strong>
+            <br>
+            Score: +2
+            <br>
+            Marking the peak supports the viewer's interpretation of the title, that the number of complains has gradually increased into record highs. The is a simple annotation that improves readability and storytelling without distorting the data. This is more effective than having the reader just read off the height of the bar alone.
+          </li>
+          <li><strong>Attention-Grabbing Title</strong>
+            <br>
+            Score: +0.5
+            <br>
+            The title asserts a particular trend that initially obtains the viewer's attention and interpretation of the data. Not only is it supported by the data, but it also implies a cause-effect relationship that isn't shown in the data otherwise. It is not deceptive, and a more neutral title would be less engaging.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="againstprop.png" style = "width: 100%;" alt="Line chart showing 5-year rolling average of NYPD substantiated complaints from 1990–2020, peaking at 30.5% in 1998. The overall mean is 23.9%, with fluctuations but no clear progress over time." />
+          <figcaption>Substantiated NYPD complaints have fluctuated over three decades, peaking in 1998 and showing no consistent trend of improvement through 2020.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li><strong>Annotating Peak Years</strong>
+            <br>
+            Score: +2
+            <br>
+            The annotation identifies the year with the highest rolling window average, which is before 2000, which supports the idea that there was a period of absence of a substantial number of complaints. This makes the visualization more readable and anchors the user's interpretation of the graph into the changes that happen afterwards. This was chosen over other techniques like highlighting as it provides context and precision.
+          </li>
+          <li><strong>Five-Year Rolling Averages</strong>
+            <br>
+            Score: +1.5
+            <br>
+            Using a 5-year long rolling windows helps to smooth out the noise in the data and makes long-term trends more interpretable. It helps to create the message that there's no major differences in certain years without reacting to the natural variance of each year. It also improves the interpretability of the visualization as it helps to show the patterns of the percentage of complaints throughout the years.
+          </li>
+          <li><strong>Horizontal Line for Mean</strong>
+            <br>
+            Score: +2
+            <br>
+            The red line allows for an easy reference point for the viewer to gauge whether performance was either below or above historical trends. This makes the visualization more grounded and interpretable without manipulating the data in any way.
+          </li>
+          <li><strong>Area Shading Under Line</strong>
+            <br>
+            Score: +1
+            <br>
+            The area under the line emphasizes the magnitude of substantiated complaint percentages over time. It make the visualization more visually engaging and helps to communicate the fluctuation of the line. The soft color and transparency of this area also helps to not overemphasize the fluctuations of the graph. Without the shaded area, the visualization would have been less visually appealing or engaging.
+          </li>
+          <li><strong>Attention-Grabbing Title</strong>
+            <br>
+            Score: +0.5
+            <br>
+            This title grounds the visualization in such a way that emphasizes a lack of consistent improvement. The data also supports this title relatively well, which helps with persuasion for the viewer, although there is a degree of bias present.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Overall, designing these two visualizations was both engaging and instructive in regards to my data visualization skills. One of the most straightforward aspects that I employed was the usage of annotations, applying ethical design principles, and applying functions like rolling averages to emphasize specific trends. These help to improve readability and make the visualizations more understandable for the viewer. The most challenging parts are making titles and incorporating smaller design choices that are engaging and captiviting to the viewer without compromising the simplicity of the visualizations. The main thing that also surprised at how easy it is to make a deceptive visualization; you have to really ensure that each design choice you make is working appropriately and effectively.
+        <br>
+        <br>
+        My understanding of ethical visualization has also changed as well. I personally define it as the process of designing visualizations that emphasize transparency, that respect the viewer's ability to interpret and reflect on a particular dataset and issue. Persuasion is acceptable when it is used to emphasize meaningful patterns that are already present, like pointing out specific peaks or averages. It becomes misleading, however, when it starts to distort axes, omit context, or leads the viewer into conclusions that aren't explicitly supported by the data. Overall, designing meaningful visualizations is not just about telling a story, but ensuring that it aligns with values of integrity and transparency.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
